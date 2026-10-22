@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Let's talk",
+  "title": "Contact",
+  "lede": "If you have a DevOps, SRE or platform role open, or a project that needs that experience, get in touch. {{responseTimeNote}}",
+  "notConfigured": {
+    "title": "Contact details are not configured yet.",
+    "body": "Edit <code>src/config.ts</code> before deploying."
+  },
+  "channels": {
+    "email": {
+      "title": "Write by email",
+      "detail": "For a conversation with context, attachments, or a longer proposal.",
+      "cta": "Open in your mail client"
+    },
+    "whatsapp": {
+      "title": "Message on WhatsApp",
+      "detail": "For a quick first conversation, no forms and no waiting.",
+      "cta": "Open the WhatsApp conversation"
+    }
+  }
+}

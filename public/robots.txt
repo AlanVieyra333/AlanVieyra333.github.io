@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# GitHub Pages sirve este archivo tal cual desde la raíz.
+
+Sitemap: https://alanvieyra333.github.io/sitemap.xml

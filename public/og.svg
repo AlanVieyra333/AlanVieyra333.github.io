@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Alan Vieyra — DevOps/SRE, Full Stack and applied AI">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.15" r="0.7">
+      <stop offset="0%" stop-color="#ca8a04" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#ca8a04" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g transform="translate(96 96)">
+    <g fill="none" stroke="#fcd34d" stroke-width="3" stroke-linecap="round">
+      <path d="M0 24 L24 0 L48 24 L24 48 Z"/>
+    </g>
+    <text x="68" y="36" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="0.02em">Alan Vieyra</text>
+  </g>
+
+  <g transform="translate(96 260)" fill="#ffffff" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
+    <text font-size="32" font-weight="500" fill="#fcd34d" letter-spacing="0.18em" text-transform="uppercase">DEVOPS · SRE · FULL STACK</text>
+    <text y="92" font-size="78" font-weight="800" letter-spacing="-0.02em">Infrastructure that</text>
+    <text y="176" font-size="78" font-weight="800" letter-spacing="-0.02em">runs production.</text>
+  </g>
+
+  <!--
+    Bloque inferior subido de y=528 a y=470: el texto de y=568 quedaba fuera
+    del área segura para unfurlers que pre-recortan a 1:1. Ahora y ∈ [470, 520]
+    cae dentro del cuadrado central.
+  -->
+  <g transform="translate(96 470)" fill="#bfdbfe" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26">
+    <text>20 CI/CD pipelines · 70 microservices · 21 pre-production clusters</text>
+    <text y="40" fill="#93c5fd" font-size="22">alanvieyra333.github.io — Mexico City</text>
+  </g>
+</svg>

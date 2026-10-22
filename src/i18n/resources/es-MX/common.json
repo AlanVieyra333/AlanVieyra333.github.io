@@ -1,0 +1,48 @@
+{
+  "skipLink": "Saltar al contenido",
+  "language": {
+    "selectorLabel": "Cambiar idioma",
+    "nativeName": "Español"
+  },
+  "navbar": {
+    "ariaLabel": "Navegación principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "ariaHome": "Inicio",
+    "home": {
+      "id": "home",
+      "label": "Perfil",
+      "href": "#perfil"
+    },
+    "process": {
+      "id": "process",
+      "label": "Experiencia",
+      "href": "#experiencia"
+    },
+    "work": {
+      "id": "work",
+      "label": "Proyectos",
+      "href": "#proyectos"
+    },
+    "contact": {
+      "id": "contact",
+      "label": "Contacto",
+      "href": "#contacto"
+    }
+  },
+  "footer": {
+    "tagline": "DevOps, SRE y desarrollo full stack.",
+    "copyright": "© {{year}} {{siteName}}. Todos los derechos reservados.",
+    "socialsLabel": "Enlaces sociales"
+  },
+  "errorBoundary": {
+    "eyebrow": "Error inesperado",
+    "title": "Algo se rompió al renderizar esta página.",
+    "description": "El error fue registrado. Recargar suele resolverlo; si no, vuelve al inicio.",
+    "retry": "Reintentar",
+    "home": "Volver al inicio"
+  },
+  "routeFallback": {
+    "loading": "Cargando…"
+  }
+}

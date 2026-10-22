@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect width="48" height="48" rx="10" fill="#2d7ab3"/>
+  <!--
+    Monograma "A" de Alan. Misma construcción de letterform que la "V"
+    anterior: trazos diagonales con modulación de peso y vértice afilado,
+    dibujados como paths y no como texto para que el render sea idéntico
+    en todos los navegadores.
+  -->
+  <!-- Pata izquierda: del vértice (21,8) al pie (9.5,38). -->
+  <path d="M21 8 L25.5 8 L15 38 L9.5 38 Z" fill="#f8fafc"/>
+  <!-- Pata derecha: del vértice (22.5,8) al pie (38.5,38). -->
+  <path d="M22.5 8 L27 8 L38.5 38 L33 38 Z" fill="#f8fafc"/>
+  <!-- Travesaño: cierra el hueco interior de la A. -->
+  <path d="M14.4 26 L33.6 26 L34.8 30.5 L13.2 30.5 Z" fill="#ffc857"/>
+</svg>

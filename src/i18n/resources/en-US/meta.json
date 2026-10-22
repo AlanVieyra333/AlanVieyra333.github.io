@@ -1,0 +1,15 @@
+{
+  "siteName": "Alan Vieyra",
+  "ownerName": "Alan Vieyra",
+  "ownerRole": "DevOps/SRE Engineer · Full Stack · Applied AI",
+  "home": {
+    "title": "Professional portfolio",
+    "description": "DevOps/SRE engineer based in Mexico City: 20 CI/CD pipelines, 70 microservices in the deployment set, 21 pre-production clusters and infrastructure automation on AWS and Azure.",
+    "ogDescription": "DevOps/SRE engineer based in Mexico City: 20 CI/CD pipelines, 70 microservices in the deployment set, 21 pre-production clusters and infrastructure automation on AWS and Azure.",
+    "ogImageAlt": "Alan Vieyra — Professional portfolio"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved."
+  }
+}

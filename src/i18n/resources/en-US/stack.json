@@ -1,0 +1,31 @@
+{
+  "eyebrow": "Stack",
+  "title": "What I work with",
+  "lede": "Market tools and the ability to operate them: not just configuring, but building the automation that makes them work.",
+  "groups": {
+    "cloud": {
+      "title": "Cloud and infrastructure",
+      "items": ["AWS (EC2, S3, VPC, Security Groups, IAM, RDS, CloudWatch, Route 53)", "Microsoft Azure", "Terraform", "Ansible"]
+    },
+    "platform": {
+      "title": "Platform and containers",
+      "items": ["Kubernetes", "OpenShift", "Helm", "Docker"]
+    },
+    "delivery": {
+      "title": "CI/CD and automation",
+      "items": ["Azure DevOps", "Jenkins", "GitHub Actions", "Shell scripting", "Python", "Go"]
+    },
+    "development": {
+      "title": "Development",
+      "items": ["Java", "Spring Cloud", "JPA", "Node.js", "TypeScript", "React", "React Native", "Expo", "Angular"]
+    },
+    "data": {
+      "title": "Data and operations",
+      "items": ["PostgreSQL", "Oracle", "RabbitMQ", "Kafka", "IBM MQ", "SQS", "Splunk", "Elastic Stack", "ServiceNow"]
+    },
+    "quality": {
+      "title": "Quality and security",
+      "items": ["Jest and Testing Library", "Snyk", "SonarQube Cloud", "Mend", "CodeQL", "Controls for secret management, cloud access control and dependency scanning"]
+    }
+  }
+}

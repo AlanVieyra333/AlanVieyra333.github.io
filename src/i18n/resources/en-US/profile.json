@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Profile",
+  "title": "Platform and automation engineering",
+  "lede": "I work across the boundary between infrastructure and product: pipelines that deploy, clusters that are run, controls that are operated, and tooling built so the team ships faster.",
+  "body": [
+    "My most recent work is DevOps on a software platform of Java and Spring Cloud microservices running on Kubernetes and OpenShift, with Oracle and PostgreSQL, RabbitMQ, Kafka, IBM MQ and SQS. There I own the CI/CD pipelines, the pre-production clusters, cloud provisioning, and the security controls.",
+    "Before that I built microservices and integration platforms for banking and telecoms, and led compliance projects as a technical lead. Since 2023 I have been setting the technical direction for mobile delivery in React Native, using an agentic delivery method: an executable delivery contract, TDD, and release gates."
+  ],
+  "metrics": {
+    "eyebrow": "In numbers",
+    "items": {
+      "pipelines": { "value": "20", "label": "CI/CD pipelines maintained for three teams" },
+      "microservices": { "value": "70", "label": "microservices in the full deployment" },
+      "clusters": { "value": "21", "label": "pre-production clusters run" },
+      "deploy": { "value": "6 h → 1 h", "label": "deployment time for the whole set" },
+      "automation": { "value": "30", "label": "operational processes automated with shell" },
+      "reach": { "value": "5,000", "label": "employees covered by a system I delivered" }
+    }
+  }
+}

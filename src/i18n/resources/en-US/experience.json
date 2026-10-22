@@ -1,0 +1,63 @@
+{
+  "eyebrow": "Experience",
+  "title": "Where I worked and what I built",
+  "lede": "Each role has its own angle: infrastructure in the most recent one, product and integration before that, and technical leadership in the freelance work.",
+  "items": {
+    "veradat": {
+      "employer": "Veradat Smart Network S.A. de C.V.",
+      "role": "DevOps Engineer",
+      "period": "Aug 2024 – Oct 2026",
+      "location": "Mexico City",
+      "highlights": [
+        "I designed and maintain 20 CI/CD pipelines in Azure DevOps for three teams (frontend, backend and QA), cutting the deployment of the full 70-microservice set from 6 hours to 1 hour.",
+        "I run 21 pre-production clusters: 9 in QA on Kubernetes, 4 in DEV and 4 in INTGR on OpenShift, and 4 in Certification on Kubernetes. With monitoring on Elastic Stack, QA incident detection dropped from 60 to 30 minutes.",
+        "I provision infrastructure on AWS and Azure with Terraform, automate 10 Linux servers with Ansible (from 2 hours to 20 minutes), and automate 20 operational processes with shell scripting.",
+        "I built custom Claude Code skills for the organization's own tasks: 4 skills that read a request in natural language, detect the intent and dispatch it to a deterministic Python script —35 scripts, about 10,800 lines— documented in about 3,200 lines of SKILL.md.",
+        "I reviewed the hexagonal architecture that decouples every microservice from its dependencies (PostgreSQL, Oracle, RabbitMQ, Kafka, IBM MQ and SQS), produced the Docker image for every technology combination, and implemented and operated controls for secret management, cloud access control and dependency scanning."
+      ]
+    },
+    "banamex": {
+      "employer": "IDS Comercial S.A. de C.V. · Banamex",
+      "role": "Fullstack + DevOps Engineer",
+      "period": "Jan 2021 – Aug 2024",
+      "location": "Mexico, remote",
+      "highlights": [
+        "I ran 10 Java/Spring Cloud microservices in production, on a multi-module parent Maven POM for shared dependency management.",
+        "I handled infrastructure tickets in ServiceNow under a one-day SLA, with log review and incident escalation; the system supported about 1,000 daily transactions per branch.",
+        "I built and ran the deployment pipelines with Jenkins, and automated 10 operational processes with shell scripting."
+      ]
+    },
+    "telcel": {
+      "employer": "GLOBAL HITSS → Everis · Telcel",
+      "role": "Fullstack Software Engineer",
+      "period": "Jul 2018 – Dec 2020",
+      "location": "Mexico City",
+      "highlights": [
+        "I migrated microservices from a Tomcat application server to OpenShift, with CI/CD and containerization with Docker on Kubernetes.",
+        "I built the integration layer with Java, Spring Cloud and JPA that translated legacy protocols into REST APIs.",
+        "I developed microservices and frontend features with React, Node.js and TypeScript, and administered Oracle databases."
+      ]
+    },
+    "freelance-compliance": {
+      "employer": "Freelance compliance consultancy",
+      "role": "Freelance technical lead",
+      "period": "Jun 2021 – Dec 2021",
+      "location": "Mexico City",
+      "highlights": [
+        "I led the technical design and the end-to-end architecture of a compliance-audit engine for Mexico's Federal Labor Law on subcontracting.",
+        "I designed the BI panel with reports for SAT, IMSS, INFONAVIT and STPS, and mentored the client's team through the design.",
+        "The system covered a workforce of 5,000 employees."
+      ]
+    },
+    "independent-mobile": {
+      "employer": "Independent projects",
+      "role": "Mobile Project Lead · React Native",
+      "period": "2023 – 2026",
+      "location": "Mexico City",
+      "highlights": [
+        "I lead the delivery contract for the apps: 12 ADRs, 20 specs and 12 runbooks, with a git worktree per work slice and its own database, and a numbered issue tracker fed by conventional commits.",
+        "I set the release gates the work has to pass: 6 GitHub Actions workflows with sharded test jobs over 95 test files, a promotion gate between staging and production, and an approval-gated production deploy."
+      ]
+    }
+  }
+}

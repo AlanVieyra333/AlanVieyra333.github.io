@@ -1,0 +1,48 @@
+{
+  "skipLink": "Skip to main content",
+  "language": {
+    "selectorLabel": "Switch language",
+    "nativeName": "English"
+  },
+  "navbar": {
+    "ariaLabel": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "ariaHome": "Home",
+    "home": {
+      "id": "home",
+      "label": "Profile",
+      "href": "#perfil"
+    },
+    "process": {
+      "id": "process",
+      "label": "Experience",
+      "href": "#experiencia"
+    },
+    "work": {
+      "id": "work",
+      "label": "Projects",
+      "href": "#proyectos"
+    },
+    "contact": {
+      "id": "contact",
+      "label": "Contact",
+      "href": "#contacto"
+    }
+  },
+  "footer": {
+    "tagline": "DevOps, SRE and full stack development.",
+    "copyright": "© {{year}} {{siteName}}. All rights reserved.",
+    "socialsLabel": "Social links"
+  },
+  "errorBoundary": {
+    "eyebrow": "Unexpected error",
+    "title": "Something broke while rendering this page.",
+    "description": "The error was logged. Reloading usually fixes it; if not, head back to the home page.",
+    "retry": "Retry",
+    "home": "Back to home"
+  },
+  "routeFallback": {
+    "loading": "Loading…"
+  }
+}

@@ -1,0 +1,73 @@
+# Dependabot — actualiza devDeps semanalmente y agrupa por ecosistema.
+# Production deps se auditan por separado con `npm audit --omit=dev` en CI.
+# framer-motion queda excluido: cambiar versiones mayores puede romper
+# animaciones (Stagger, MotionConfig, FadeIn) sin que el CI lo detecte.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      build:
+        patterns:
+          - "vite"
+          - "@vitejs/*"
+          - "typescript"
+          - "typescript-eslint"
+          - "@types/node"
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+      lint:
+        patterns:
+          - "eslint"
+          - "@eslint/js"
+          - "eslint-plugin-*"
+          - "globals"
+      # vitest y sus paquetes oficiales declaran peer deps *exactas*
+      # entre sí (p. ej. @vitest/coverage-v8@5.0.5 exige vitest@5.0.5).
+      # Si dependabot actualiza uno solo, `npm ci` falla con ERESOLVE.
+      # Agruparlos mantiene ambas versiones alineadas en un solo PR.
+      vitest:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
+      # react-i18next@17 exige peer `i18next >= 26.2.0`, así que subir
+      # uno sin el otro rompe `npm ci` con ERESOLVE. Además, i18next
+      # v26 eliminó opciones de `init` (p. ej. `initImmediate`), así
+      # que el bump de i18next necesita cambios de código que lo
+      # acompañen: agruparlos deja las dos piezas en el mismo PR.
+      i18n:
+        patterns:
+          - "i18next"
+          - "react-i18next"
+    ignore:
+      - dependency-name: "framer-motion"
+      # El grupo lint completo está pinneado: el ecosistema
+      # (eslint ^10, @eslint/js ^10, jsx-a11y ^6.10) tiene peer deps
+      # cruzadas incompatibles mientras no se estabilice eslint 10.
+      # Quitar cuando la cadena entera (eslint, @eslint/js, todos los
+      # eslint-plugin-* usados) estén alineados a una versión que
+      # soporte el último mayor del otro.
+      - dependency-name: "eslint"
+      - dependency-name: "@eslint/js"
+      - dependency-name: "eslint-plugin-jsx-a11y"
+      - dependency-name: "eslint-plugin-react-hooks"
+      - dependency-name: "eslint-plugin-react-refresh"
+      # typescript-eslint@latest (8.71.1) sólo soporta typescript
+      # >=4.8.4 <6.1.0. Sin una v9 de typescript-eslint que admita
+      # typescript 7+, este bump rompe el CI semanalmente. Quitar de
+      # la lista cuando typescript-eslint v9 se publique.
+      - dependency-name: "typescript"

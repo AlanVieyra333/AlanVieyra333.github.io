@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Perfil",
+  "title": "Ingeniería de plataforma y automatización",
+  "lede": "Trabajo en la frontera entre la infraestructura y el producto: pipelines que despliegan, clústeres que se administran, controles que se operan y herramientas que se construyen para que el equipo entregue más rápido.",
+  "body": [
+    "Mi trabajo reciente es DevOps en una plataforma de software con microservicios en Java y Spring Cloud sobre Kubernetes y OpenShift, con base de datos Oracle, PostgreSQL, RabbitMQ, Kafka, IBM MQ y SQS. Ahí mantengo los pipelines de CI/CD, los clústeres de preproducción, el aprovisionamiento en la nube y los controles de seguridad.",
+    "Antes de eso construí microservicios y plataformas de integración para banca y telecomunicaciones, y llevé proyectos de cumplimiento laboral como líder técnico. Desde 2023 dirijo la entrega técnica de aplicaciones móviles en React Native, con un método de entrega agéntica: contrato de entrega ejecutable, TDD y puertas de release."
+  ],
+  "metrics": {
+    "eyebrow": "En números",
+    "items": {
+      "pipelines": { "value": "20", "label": "pipelines de CI/CD mantenidos para tres equipos" },
+      "microservices": { "value": "70", "label": "microservicios en el despliegue completo" },
+      "clusters": { "value": "21", "label": "clústeres de preproducción administrados" },
+      "deploy": { "value": "6 h → 1 h", "label": "tiempo de despliegue del conjunto completo" },
+      "automation": { "value": "30", "label": "procesos de operación automatizados con shell" },
+      "reach": { "value": "5,000", "label": "empleados cubiertos por un sistema que entregué" }
+    }
+  }
+}

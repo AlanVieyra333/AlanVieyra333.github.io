@@ -1,0 +1,9 @@
+{
+  "hero": {
+    "eyebrow": "DevOps · SRE · Full Stack · Applied AI",
+    "title": "I build the infrastructure that keeps software running in production.",
+    "lede": "I'm {{ownerName}}, a DevOps/SRE engineer based in Mexico City. I automate deployments, run clusters, and build the tooling that lets a team ship faster.",
+    "primaryCta": "View the CV",
+    "secondaryCta": "See the projects"
+  }
+}

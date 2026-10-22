@@ -1,0 +1,31 @@
+{
+  "eyebrow": "Stack",
+  "title": "Con qué trabajo",
+  "lede": "Herramientas de mercado y capacidad de operar: no solo configurar, sino construir la automatización que las hace funcionar.",
+  "groups": {
+    "cloud": {
+      "title": "Nube e infraestructura",
+      "items": ["AWS (EC2, S3, VPC, Security Groups, IAM, RDS, CloudWatch, Route 53)", "Microsoft Azure", "Terraform", "Ansible"]
+    },
+    "platform": {
+      "title": "Plataforma y contenedores",
+      "items": ["Kubernetes", "OpenShift", "Helm", "Docker"]
+    },
+    "delivery": {
+      "title": "CI/CD y automatización",
+      "items": ["Azure DevOps", "Jenkins", "GitHub Actions", "Shell scripting", "Python", "Go"]
+    },
+    "development": {
+      "title": "Desarrollo",
+      "items": ["Java", "Spring Cloud", "JPA", "Node.js", "TypeScript", "React", "React Native", "Expo", "Angular"]
+    },
+    "data": {
+      "title": "Datos y operación",
+      "items": ["PostgreSQL", "Oracle", "RabbitMQ", "Kafka", "IBM MQ", "SQS", "Splunk", "Elastic Stack", "ServiceNow"]
+    },
+    "quality": {
+      "title": "Calidad y seguridad",
+      "items": ["Jest y Testing Library", "Snyk", "SonarQube Cloud", "Mend", "CodeQL", "Controles de gestión de secretos, control de acceso en nube y escaneo de dependencias"]
+    }
+  }
+}

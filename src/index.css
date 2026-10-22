@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/*
+ * Sistema de diseño (Tailwind v4, CSS-first).
+ *
+ * Cada token aquí se expone como clase utility de Tailwind: `bg-brand-900`,
+ * `text-display`, `max-w-content`, `ease-out-quint`, etc. Si una clase no
+ * existe en el CSS compilado, el token está mal escrito — no hay error de
+ * compilación, simplemente no se renderiza.
+ *
+ * Notas operativas:
+ *  - `@theme` debe estar al nivel superior, no dentro de `@layer`.
+ *  - Los tokens no usados se eliminan del bundle automáticamente.
+ *  - Mantenemos la paleta por defecto sin "limpia"; cuesta 0 bytes.
+ */
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+
+  --text-display:
+    clamp(2.5rem, 1.4rem + 4.4vw, 4.25rem);
+  --text-display--line-height: 1.03;
+  --text-display--letter-spacing: -0.032em;
+  --text-display--font-weight: 700;
+
+  --text-title:
+    clamp(1.875rem, 1.4rem + 1.9vw, 2.75rem);
+  --text-title--line-height: 1.12;
+  --text-title--letter-spacing: -0.024em;
+  --text-title--font-weight: 700;
+
+  --text-subtitle:
+    clamp(1.25rem, 1.12rem + 0.55vw, 1.5rem);
+  --text-subtitle--line-height: 1.3;
+  --text-subtitle--letter-spacing: -0.014em;
+  --text-subtitle--font-weight: 600;
+
+  --text-lede:
+    clamp(1.0625rem, 1.02rem + 0.2vw, 1.1875rem);
+  --text-lede--line-height: 1.65;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.33;
+  --text-eyebrow--letter-spacing: 0.14em;
+  --text-eyebrow--font-weight: 600;
+
+  --color-brand-50: oklch(0.97 0.014 254);
+  --color-brand-100: oklch(0.93 0.032 257);
+  --color-brand-200: oklch(0.87 0.060 257);
+  --color-brand-300: oklch(0.80 0.100 257);
+  --color-brand-500: oklch(0.62 0.180 257);
+  --color-brand-600: oklch(0.55 0.220 261);
+  --color-brand-700: oklch(0.49 0.220 261);
+  --color-brand-800: oklch(0.42 0.210 263);
+  --color-brand-900: oklch(0.34 0.170 264);
+  --color-brand-950: oklch(0.27 0.090 264);
+
+  --color-ink-50: oklch(0.985 0.002 250);
+  --color-ink-100: oklch(0.955 0.004 250);
+  --color-ink-200: oklch(0.905 0.006 250);
+  --color-ink-300: oklch(0.825 0.008 250);
+  --color-ink-400: oklch(0.655 0.010 250);
+  --color-ink-500: oklch(0.545 0.011 250);
+  --color-ink-600: oklch(0.455 0.011 250);
+  --color-ink-700: oklch(0.350 0.011 250);
+  --color-ink-800: oklch(0.240 0.010 250);
+  --color-ink-900: oklch(0.155 0.009 250);
+
+  --color-accent-100: oklch(0.94 0.030 78);
+  --color-accent-300: oklch(0.82 0.080 75);
+  --color-accent-500: oklch(0.70 0.110 72);
+  --color-accent-700: oklch(0.50 0.090 68);
+
+  --spacing-section: clamp(4rem, 2.5rem + 6vw, 7.5rem);
+  --spacing-gutter: 1.25rem;
+
+  --container-content: 68rem;
+  --container-reading: 68ch;
+
+  --radius-card: 0.875rem;
+  --radius-pill: 9999px;
+
+  --shadow-card:
+    0 1px 2px 0 oklch(0.155 0.009 250 / 0.05),
+    0 8px 24px -12px oklch(0.155 0.009 250 / 0.18);
+  --shadow-lift:
+    0 2px 4px 0 oklch(0.155 0.009 250 / 0.06),
+    0 18px 40px -16px oklch(0.155 0.009 250 / 0.28);
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink-50);
+    color: var(--color-ink-800);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-brand-900);
+  }
+
+  /* `:where()` mantiene la especificidad en 0; las utilities siguen ganando. */
+  :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 100;
+    padding: 0.6rem 1rem;
+    background-color: var(--color-brand-900);
+    /* El fondo es brand-900, por lo que el texto en ink-50 (off-white)
+       mantiene contraste WCAG AAA y respeta el sistema de tokens. */
+    color: var(--color-ink-50);
+    font-weight: 600;
+    border-radius: var(--radius-card);
+    transform: translateY(-200%);
+    transition: transform 150ms var(--ease-out-quint);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  .evidence-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    font-size: var(--text-eyebrow);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: var(--radius-pill);
+  }
+
+  .evidence-badge--verificado {
+    background-color: color-mix(in oklch, var(--color-brand-700) 12%, transparent);
+    color: var(--color-brand-900);
+  }
+
+  .evidence-badge--documentado {
+    background-color: color-mix(in oklch, var(--color-accent-500) 16%, transparent);
+    color: var(--color-accent-700);
+  }
+
+  .evidence-badge--no-verificable {
+    background-color: color-mix(in oklch, var(--color-ink-500) 14%, transparent);
+    color: var(--color-ink-700);
+  }
+
+  .diagram-caption {
+    font-size: var(--text-small);
+    color: var(--color-ink-600);
+    font-style: italic;
+  }
+}

@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Cancela ejecuciones obsoletas de la misma rama/PR cuando se sube un commit nuevo.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Permisos mínimos. El job sólo necesita leer el código.
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Lint + Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # Acciones pineadas por SHA completo. Las etiquetas majors son mutables;
+      # un compromiso del maintainer podría re-apuntar la etiqueta y el CI
+      # ejecutaría código distinto al auditado. Actualizar con Dependabot
+      # (.github/dependabot.yml) cuando se añadan más acciones.
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - name: Setup Node
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Audit production dependencies
+        # Falla el build si las dependencias de producción tienen vulnerabilidades
+        # altas o críticas. Las advertencias de devDeps no bloquean; el bundle de
+        # producción no las incluye.
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: i18n parity check
+        # Valida que las claves de los JSON de es-MX y en-US coinciden y
+        # que las interpolaciones están balanceadas. Bloquea PRs que
+        # añadan un locale nuevo sin su contraparte.
+        run: npm run i18n:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        # vitest en modo no-watch (CI-friendly).
+        run: npm run test:run
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify no client name in bundle
+        # Guard de confidencialidad: el bundle de producción no debe contener
+        # los nombres reales del cliente anonimizado.
+        run: |
+          ! grep -RInE "grupo de la parra|GDP administraci[oó]n|Sistema Gesti[oó]n Ley Subcontrataci[oó]n" dist/ && echo "OK: no client identifiers in dist/"
+
+      - name: Editorial boundary check
+        # El sitio es una superficie pública y hereda la misma frontera
+        # editorial que los ocho perfiles del currículum (FACTS.md §4).
+        # El guard falla si el texto afirma trabajo de ML, métricas de
+        # fiabilidad no confirmadas, guardia 24/7, la implementación de
+        # la arquitectura hexagonal, o el nombre de un proyecto móvil.
+        run: npm run editorial:check
+
+      - name: Verify the localized entry points exist
+        # GitHub Pages es estático: `/es-MX/` sólo funciona si existe
+        # `es-MX/index.html`. El paso `post-build` los genera; si
+        # desaparecen, un recargado en la URL localizada da 404.
+        run: |
+          set -euo pipefail
+          for locale in es-MX en-US; do
+            if [ ! -f "dist/${locale}/index.html" ]; then
+              echo "::error::Falta dist/${locale}/index.html"
+              exit 1
+            fi
+          done
+          echo "OK: entry points localizados presentes"
+
+      - name: Upload build artifact
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <!-- es-MX -->
+  <url>
+    <loc>https://alanvieyra333.github.io/es-MX/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://alanvieyra333.github.io/es-MX/" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://alanvieyra333.github.io/en-US/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alanvieyra333.github.io/es-MX/" />
+  </url>
+
+  <!-- en-US -->
+  <url>
+    <loc>https://alanvieyra333.github.io/en-US/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://alanvieyra333.github.io/es-MX/" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://alanvieyra333.github.io/en-US/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alanvieyra333.github.io/es-MX/" />
+  </url>
+</urlset>
