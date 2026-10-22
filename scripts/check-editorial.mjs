@@ -27,17 +27,18 @@
  *
  *   4. **La arquitectura hexagonal fue revisada, no implementada.**
  *
- *   5. **Sin nombres de los proyectos móviles.** El CV los describe
- *      sin nombrarlos ("proyectos freelance e independientes"). El
- *      nombre puede aparecer en una URL —el repositorio público— pero
- *      no en el texto.
- *
  * Qué **no** comprueba:
  *
  *   - Los valores de tipo URL se saltan: el enlace al repositorio
  *     público sí lleva el nombre, por decisión editorial explícita.
  *   - Los nombres de empleadores y clientes: esos sí se publican, y
  *     el CV los publica igual.
+ *   - **Los nombres de los proyectos que no se pueden nombrar.** Un
+ *     guard que busca un nombreqc con un `grep` tiene que escribir ese
+ *     nombre en su propio archivo, y este repositorio es público:
+ *     el guard publicaría justo lo que debe ocultar. Por eso esa
+ *     regla es una convención documentada en el README, no una
+ *     comprobación mecánica.
  *
  * Salida:
  *   - Código 0 si todo pasa.
@@ -97,16 +98,6 @@ const RULES = [
     patterns: [
       /implement\w*[^.\n]{0,80}hexagonal/i,
       /hexagonal[^.\n]{0,80}implement/i,
-    ],
-  },
-  {
-    id: 'mobile-project-names',
-    why: 'FACTS.md §3: los proyectos móviles se describen sin nombrarlos en el texto publicado.',
-    patterns: [
-      /mi[- ]pensi[oó]n\s*mx/i,
-      /find\s*a\s*friend/i,
-      /findafriend/i,
-      /renta[- ]un[- ]amigo/i,
     ],
   },
 ];

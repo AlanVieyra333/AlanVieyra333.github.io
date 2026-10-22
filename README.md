@@ -133,6 +133,23 @@ y falla si el contenido:
 Las URL quedan fuera del chequeo a propósito: el enlace al repositorio
 público sí lleva el nombre, por decisión editorial explícita.
 
+### Confidencialidad del cliente freelance
+
+El puesto freelance de cumplimiento se describe **sin nombrar al
+cliente** —"Consultoría freelance de cumplimiento", en lugar del nombre
+de la empresa—. Es una convención, no un guard automático: el nombre no
+aparece en ningún archivo de este repositorio, ni siquiera en los
+patrones de un script, precisamente para que el repositorio público no
+lo escriba en ningún sitio.
+
+Lo mismo aplica a los proyectos móviles que no se pueden nombrar: un
+guard que los buscara con un `grep` tendría que escribirlos en su propio
+código, y publicaría justo lo que debe ocultar. Ambas reglas se
+verifican por revisión, no por máquina.
+
+Si alguna vez hay que nombrar al cliente, el cambio pasa por revisión
+explícita, no por un `grep` en el CI.
+
 ## GitHub Pages y el enrutado del cliente
 
 GitHub Pages es un hosting estático: no reescribe URLs. Como el sitio

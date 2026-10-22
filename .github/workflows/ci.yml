@@ -58,12 +58,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Verify no client name in bundle
-        # Guard de confidencialidad: el bundle de producción no debe contener
-        # los nombres reales del cliente anonimizado.
-        run: |
-          ! grep -RInE "grupo de la parra|GDP administraci[oó]n|Sistema Gesti[oó]n Ley Subcontrataci[oó]n" dist/ && echo "OK: no client identifiers in dist/"
-
       - name: Editorial boundary check
         # El sitio es una superficie pública y hereda la misma frontera
         # editorial que los ocho perfiles del currículum (FACTS.md §4).
