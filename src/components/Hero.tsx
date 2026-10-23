@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import HeroArt from './HeroArt';
+import HeroBackdrop from './HeroBackdrop';
 import { OWNER_NAME } from '@/config';
 import { CV_RELEASES_URL } from '@/content/profile';
 import { useLocale } from '@/i18n/useLocale';
@@ -10,10 +10,10 @@ export default function Hero() {
   const { localizedPath } = useLocale();
   return (
     <section className="relative isolate overflow-hidden bg-brand-950 text-white">
-      <HeroArt />
+      <HeroBackdrop />
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-950/85 via-brand-950/75 to-brand-950"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-950/80 via-brand-950/70 to-brand-950"
       />
 
       <div className="mx-auto flex min-h-[78svh] max-w-content flex-col justify-center px-gutter py-section">
