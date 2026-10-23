@@ -1,7 +1,7 @@
 {
   "eyebrow": "Hablemos",
   "title": "Contacto",
-  "lede": "Si tienes un puesto de DevOps, SRE o plataforma abierta, o un proyecto que necesita esa experiencia, escríbeme. {{responseTimeNote}}",
+  "lede": "Si tienes un puesto de DevOps, SRE o de plataforma, o un proyecto que necesita esa experiencia, escríbeme. {{responseTimeNote}}",
   "notConfigured": {
     "title": "Los datos de contacto aún no están configurados.",
     "body": "Edita <code>src/config.ts</code> antes de desplegar."

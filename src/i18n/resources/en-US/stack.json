@@ -1,11 +1,11 @@
 {
   "eyebrow": "Stack",
   "title": "What I work with",
-  "lede": "Market tools and the ability to operate them: not just configuring, but building the automation that makes them work.",
+  "lede": "Market tools and the ability to operate them: I set them up, and I build the automation that makes them work.",
   "groups": {
     "cloud": {
       "title": "Cloud and infrastructure",
-      "items": ["AWS (EC2, S3, VPC, Security Groups, IAM, RDS, CloudWatch, Route 53)", "Microsoft Azure", "Terraform", "Ansible"]
+      "items": ["AWS", "EC2", "S3", "VPC", "Security Groups", "IAM", "RDS", "CloudWatch", "Route 53", "Microsoft Azure", "Terraform", "Ansible"]
     },
     "platform": {
       "title": "Platform and containers",
@@ -25,7 +25,7 @@
     },
     "quality": {
       "title": "Quality and security",
-      "items": ["Jest and Testing Library", "Snyk", "SonarQube Cloud", "Mend", "CodeQL", "Controls for secret management, cloud access control and dependency scanning"]
+      "items": ["Jest and Testing Library", "Snyk", "SonarQube Cloud", "Mend", "CodeQL", "Secret management", "Cloud access control", "Dependency scanning"]
     }
   }
 }

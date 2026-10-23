@@ -5,21 +5,21 @@
   "items": {
     "resume": {
       "title": "Professional CV in LaTeX",
-      "summary": "Generates a CV in four profiles, two languages and two layout variants —16 PDFs in total— from a single source of truth, with invariants verified in CI and releases versioned by tag.",
+      "summary": "Generates a CV in four profiles, two languages and two layout variants: 16 PDFs in total, all built from a single source of truth, with invariants verified in CI and releases published by tag.",
       "tags": ["LaTeX", "Make", "GitHub Actions", "MIT"],
       "linkLabel": "View the repository",
       "href": "https://github.com/AlanVieyra333/resume"
     },
     "pension-estimator": {
       "title": "IMSS pension estimator (Law 73)",
-      "summary": "A React Native and Expo app that estimates the old-age pension under Mexico's 1973 Social Security Law. An auditable eight-step calculation engine, each step carrying its formula and its legal basis; 116 tests; no backend and no telemetry.",
+      "summary": "A React Native and Expo app that estimates the old-age pension under Mexico's 1973 Social Security Law. An auditable eight-step calculation engine, each step carrying its formula and its legal basis. 116 tests, no backend and no telemetry.",
       "tags": ["React Native", "Expo", "TypeScript", "Jest", "MIT"],
       "linkLabel": "View the repository",
       "href": "https://github.com/VieyraLabs/mi-pension-mx"
     },
     "portfolio": {
       "title": "This portfolio",
-      "summary": "A bilingual site published on GitHub Pages with React, Vite and Tailwind. The content lives in a single module and is validated against the same source of truth as the CV.",
+      "summary": "A bilingual site published on GitHub Pages with React, Vite and Tailwind. All the content lives in the i18n resources and is validated against the same source of truth as the CV.",
       "tags": ["React 19", "Vite 8", "Tailwind 4", "i18next"],
       "linkLabel": "View the code",
       "href": "https://github.com/AlanVieyra333/AlanVieyra333.github.io"

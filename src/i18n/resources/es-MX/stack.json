@@ -1,11 +1,11 @@
 {
   "eyebrow": "Stack",
   "title": "Con qué trabajo",
-  "lede": "Herramientas de mercado y capacidad de operar: no solo configurar, sino construir la automatización que las hace funcionar.",
+  "lede": "Herramientas de mercado y capacidad de operar: además de configurarlas, construyo la automatización que las hace funcionar.",
   "groups": {
     "cloud": {
       "title": "Nube e infraestructura",
-      "items": ["AWS (EC2, S3, VPC, Security Groups, IAM, RDS, CloudWatch, Route 53)", "Microsoft Azure", "Terraform", "Ansible"]
+      "items": ["AWS", "EC2", "S3", "VPC", "Security Groups", "IAM", "RDS", "CloudWatch", "Route 53", "Microsoft Azure", "Terraform", "Ansible"]
     },
     "platform": {
       "title": "Plataforma y contenedores",
@@ -25,7 +25,7 @@
     },
     "quality": {
       "title": "Calidad y seguridad",
-      "items": ["Jest y Testing Library", "Snyk", "SonarQube Cloud", "Mend", "CodeQL", "Controles de gestión de secretos, control de acceso en nube y escaneo de dependencias"]
+      "items": ["Jest y Testing Library", "Snyk", "SonarQube Cloud", "Mend", "CodeQL", "Gestión de secretos", "Control de acceso en nube", "Escaneo de dependencias"]
     }
   }
 }

@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "DevOps · SRE · Full Stack · IA aplicada",
     "title": "Construyo la infraestructura que sostiene el software en producción.",
-    "lede": "Soy {{ownerName}}, ingeniero DevOps/SRE en Ciudad de México. Automatizo despliegues, administro clústeres y construyo herramientas que hacen que un equipo entregue más rápido.",
+    "lede": "Soy {{ownerName}}, ingeniero DevOps/SRE en Ciudad de México. Automatizo despliegues, administro clústeres y construyo las herramientas para que un equipo entregue más rápido.",
     "primaryCta": "Ver el CV",
     "secondaryCta": "Ver los proyectos"
   }

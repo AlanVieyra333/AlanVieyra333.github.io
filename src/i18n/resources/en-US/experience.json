@@ -12,7 +12,7 @@
         "I designed and maintain 20 CI/CD pipelines in Azure DevOps for three teams (frontend, backend and QA), cutting the deployment of the full 70-microservice set from 6 hours to 1 hour.",
         "I run 21 pre-production clusters: 9 in QA on Kubernetes, 4 in DEV and 4 in INTGR on OpenShift, and 4 in Certification on Kubernetes. With monitoring on Elastic Stack, QA incident detection dropped from 60 to 30 minutes.",
         "I provision infrastructure on AWS and Azure with Terraform, automate 10 Linux servers with Ansible (from 2 hours to 20 minutes), and automate 20 operational processes with shell scripting.",
-        "I built custom Claude Code skills for the organization's own tasks: 4 skills that read a request in natural language, detect the intent and dispatch it to a deterministic Python script —35 scripts, about 10,800 lines— documented in about 3,200 lines of SKILL.md.",
+        "I built custom Claude Code skills for the organization's own tasks: 4 skills that read a request in natural language, detect the intent and dispatch it to a deterministic Python script. That's 35 scripts and about 10,800 lines of code, documented in about 3,200 lines of SKILL.md.",
         "I reviewed the hexagonal architecture that decouples every microservice from its dependencies (PostgreSQL, Oracle, RabbitMQ, Kafka, IBM MQ and SQS), produced the Docker image for every technology combination, and implemented and operated controls for secret management, cloud access control and dependency scanning."
       ]
     },
@@ -55,7 +55,7 @@
       "period": "2023 – 2026",
       "location": "Mexico City",
       "highlights": [
-        "I lead the delivery contract for the apps: 12 ADRs, 20 specs and 12 runbooks, with a git worktree per work slice and its own database, and a numbered issue tracker fed by conventional commits.",
+        "I lead the delivery contract for the mobile apps: 12 ADRs, 20 specs and 12 runbooks, with a git worktree and its own database per work slice, plus a numbered issue tracker fed by conventional commits.",
         "I set the release gates the work has to pass: 6 GitHub Actions workflows with sharded test jobs over 95 test files, a promotion gate between staging and production, and an approval-gated production deploy."
       ]
     }

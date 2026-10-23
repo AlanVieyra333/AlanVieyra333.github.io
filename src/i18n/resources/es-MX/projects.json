@@ -5,21 +5,21 @@
   "items": {
     "resume": {
       "title": "Currículum profesional en LaTeX",
-      "summary": "Genera un currículum en cuatro perfiles, dos idiomas y dos variantes de diseño —16 PDFs en total— a partir de una fuente única de verdad, con invariantes verificados en CI y releases versionados por etiqueta.",
+      "summary": "Genera un currículum en cuatro perfiles, dos idiomas y dos variantes de diseño: 16 PDFs en total, todos generados desde una fuente única de verdad, con invariantes verificados en CI y releases publicados por etiqueta.",
       "tags": ["LaTeX", "Make", "GitHub Actions", "MIT"],
       "linkLabel": "Ver el repositorio",
       "href": "https://github.com/AlanVieyra333/resume"
     },
     "pension-estimator": {
       "title": "Estimador de pensión IMSS (Ley 73)",
-      "summary": "Aplicación móvil en React Native y Expo que estima la pensión de vejez bajo la Ley del Seguro Social de 1973. Motor de cálculo auditable en ocho pasos, cada uno con su fórmula y su fundamento legal; 116 pruebas; sin backend y sin telemetría.",
+      "summary": "Aplicación móvil en React Native y Expo que estima la pensión de vejez bajo la Ley del Seguro Social de 1973. Motor de cálculo auditable en ocho pasos, cada uno con su fórmula y su fundamento legal. 116 pruebas, sin backend y sin telemetría.",
       "tags": ["React Native", "Expo", "TypeScript", "Jest", "MIT"],
       "linkLabel": "Ver el repositorio",
       "href": "https://github.com/VieyraLabs/mi-pension-mx"
     },
     "portfolio": {
       "title": "Este portafolio",
-      "summary": "Sitio bilingüe publicado en GitHub Pages con React, Vite y Tailwind. El contenido vive en un solo módulo y se valida contra la misma fuente de verdad que el currículum.",
+      "summary": "Sitio bilingüe publicado en GitHub Pages con React, Vite y Tailwind. Todo el contenido vive en los recursos de i18n y se valida contra la misma fuente de verdad que el currículum.",
       "tags": ["React 19", "Vite 8", "Tailwind 4", "i18next"],
       "linkLabel": "Ver el código",
       "href": "https://github.com/AlanVieyra333/AlanVieyra333.github.io"

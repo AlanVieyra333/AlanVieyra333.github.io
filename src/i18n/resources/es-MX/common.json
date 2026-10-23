@@ -10,22 +10,26 @@
     "closeMenu": "Cerrar menú",
     "ariaHome": "Inicio",
     "home": {
-      "id": "home",
       "label": "Perfil",
       "href": "#perfil"
     },
     "process": {
-      "id": "process",
       "label": "Experiencia",
       "href": "#experiencia"
     },
+    "stack": {
+      "label": "Stack",
+      "href": "#stack"
+    },
     "work": {
-      "id": "work",
       "label": "Proyectos",
       "href": "#proyectos"
     },
+    "credentials": {
+      "label": "Credenciales",
+      "href": "#credenciales"
+    },
     "contact": {
-      "id": "contact",
       "label": "Contacto",
       "href": "#contacto"
     }
@@ -43,6 +47,6 @@
     "home": "Volver al inicio"
   },
   "routeFallback": {
-    "loading": "Cargando…"
+    "loading": "Cargando..."
   }
 }
