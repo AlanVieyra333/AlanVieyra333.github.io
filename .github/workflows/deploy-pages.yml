@@ -5,12 +5,14 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Los permisos que pide la plantilla oficial de GitHub para publicar en
+# Pages: lectura del código, escritura en Pages y el token de OIDC que
+# `actions/deploy-pages` usa para autenticarse contra la API de Pages.
 permissions:
-  contents: write
+  contents: read
   pages: write
+  id-token: write
 
-# Una despliegue a la vez: dos despliegues concurrentes al mismo sitio
-# pueden dejar publicada una versión anterior por encima de la nueva.
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -22,6 +24,7 @@ jobs:
     timeout-minutes: 10
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -38,45 +41,20 @@ jobs:
       - name: Build
         run: npm run build
 
-      # La publicación va por la rama `gh-pages`, que es la fuente que
-      # GitHub Pages sirve.
-      #
-      # Por qué no `actions/deploy-pages`: esa action no toma el artefacto
-      # del runner, pide una URL firmada al servicio interno de Actions
-      # (`pipelinesghubeus5.actions.githubusercontent.com`). En esta
-      # instancia de GitHub ese endpoint devuelve 404 y la action falla
-      # al publicar aunque el artefacto se haya subido bien. Tampoco
-      # sirve `POST /pages/builds`: aquí el endpoint decodifica el
-      # cuerpo como JSON en vez de tratarlo como un tarball.
-      #
-      # Publicar la rama directamente no depende de ninguno de los dos
-      # servicios: es el mismo modelo clásico de GitHub Pages.
-      - name: Publicar en la rama gh-pages
-        run: |
-          set -euo pipefail
-          SITE="$RUNNER_TEMP/site"
-          rm -rf "$SITE"
-          cp -R dist "$SITE"
-          # `.nojekyll` desactiva el procesamiento de Jekyll que Pages
-          # aplica por defecto: el sitio se sirve tal cual.
-          touch "$SITE/.nojekyll"
+      # `configure-pages` prepara el sitio de Pages: comprueba que existe,
+      # lo habilita si hace falta y expone la configuración de la build.
+      # Va antes de subir el artefacto porque es la action que deja el
+      # sitio de Pages en un estado coherente con un build por workflow.
+      - name: Setup Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+        with:
+          enablement: true
 
-          cd "$SITE"
-          git init -q -b gh-pages
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -q -m "build: publish the portfolio site (${GITHUB_SHA})"
-          git push --force \
-            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
-            gh-pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
 
-      - name: Resumen
-        run: |
-          {
-            echo "### Deploy a GitHub Pages"
-            echo
-            echo "- Commit: \`${GITHUB_SHA}\`"
-            echo "- Rama: \`gh-pages\`"
-            echo "- URL: https://alanvieyra333.github.io/"
-          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
