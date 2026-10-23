@@ -13,6 +13,11 @@ dist-ssr
 coverage
 *.local
 
+# Masters de medios. El sitio sirve los derivados optimizados de
+# `public/`, que sí se versionan; el original se queda en el disco
+# local para poder re-encodar, sin meter 7 MB en el historial.
+assets/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
