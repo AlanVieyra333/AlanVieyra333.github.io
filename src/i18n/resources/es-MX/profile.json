@@ -1,20 +1,20 @@
 {
   "eyebrow": "Perfil",
   "title": "Ingeniería de plataforma y automatización",
-  "lede": "Mi trabajo está entre la infraestructura y el producto: los pipelines que despliego, los clústeres que administro y las herramientas que construyo para que el equipo no dependa de una sola persona.",
+  "lede": "Mi trabajo ha estado entre la infraestructura y el producto: los pipelines que desplegué, los clústeres que administré y las herramientas que construí para que el equipo no dependiera de una sola persona.",
   "body": [
-    "Lo más reciente ha sido DevOps en una plataforma de microservicios Java y Spring Cloud sobre Kubernetes y OpenShift, con Oracle y PostgreSQL como bases de datos y RabbitMQ, Kafka, IBM MQ y SQS como mensajería. Ahí mantengo los pipelines de CI/CD y los clústeres de preproducción, hago el aprovisionamiento en la nube y opero los controles de seguridad.",
+    "Lo más reciente ha sido DevOps en una plataforma de microservicios Java y Spring Cloud sobre Kubernetes y OpenShift, con Oracle y PostgreSQL como bases de datos y RabbitMQ, Kafka, IBM MQ y SQS como mensajería. Ahí mantuve los pipelines de CI/CD y los clústeres de preproducción, hice el aprovisionamiento en la nube y operé los controles de seguridad.",
     "Antes de eso construí microservicios y plataformas de integración para banca y telecomunicaciones, y llevé proyectos de cumplimiento laboral como líder técnico. Desde 2023 dirijo la entrega técnica de aplicaciones móviles en React Native, con un método agéntico: contrato de entrega ejecutable, TDD y puertas de release."
   ],
   "metrics": {
     "eyebrow": "En números",
     "items": {
-      "pipelines": { "value": "20", "label": "pipelines de CI/CD mantenidos para tres equipos" },
-      "microservices": { "value": "70", "label": "microservicios en el despliegue completo" },
-      "clusters": { "value": "21", "label": "clústeres de preproducción administrados" },
+      "pipelines": { "value": "+20", "label": "pipelines de CI/CD mantenidos para tres equipos" },
+      "microservices": { "value": "+70", "label": "microservicios en el despliegue completo" },
+      "clusters": { "value": "+21", "label": "clústeres de preproducción administrados" },
       "deploy": { "value": "6 h → 1 h", "label": "tiempo de despliegue del conjunto completo" },
-      "automation": { "value": "30", "label": "procesos de operación automatizados con shell" },
-      "reach": { "value": "5,000", "label": "empleados cubiertos por un sistema que entregué" }
+      "automation": { "value": "+30", "label": "procesos de operación automatizados con shell" },
+      "reach": { "value": "+5,000", "label": "empleados cubiertos por un sistema que entregué" }
     }
   }
 }

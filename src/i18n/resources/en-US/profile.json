@@ -1,20 +1,20 @@
 {
   "eyebrow": "Profile",
   "title": "Platform and automation engineering",
-  "lede": "My work sits between infrastructure and product: the pipelines I deploy, the clusters I run and the tooling I build so the team doesn't depend on a single person.",
+  "lede": "My work has been between infrastructure and product: the pipelines I deployed, the clusters I ran and the tooling I built so the team didn't depend on a single person.",
   "body": [
-    "The last few years I've spent on DevOps for a platform of Java and Spring Cloud microservices running on Kubernetes and OpenShift, with Oracle and PostgreSQL as databases and RabbitMQ, Kafka, IBM MQ and SQS as messaging. There I own the CI/CD pipelines and the pre-production clusters, and I handle cloud provisioning and the security controls.",
+    "The last few years I spent on DevOps for a platform of Java and Spring Cloud microservices running on Kubernetes and OpenShift, with Oracle and PostgreSQL as databases and RabbitMQ, Kafka, IBM MQ and SQS as messaging. There I owned the CI/CD pipelines and the pre-production clusters, I handled cloud provisioning and I operated the security controls.",
     "Before that I built microservices and integration platforms for banking and telecoms, and led compliance projects as a technical lead. Since 2023 I have been setting the technical direction for mobile delivery in React Native, using an agentic method: an executable delivery contract, TDD and release gates."
   ],
   "metrics": {
     "eyebrow": "In numbers",
     "items": {
-      "pipelines": { "value": "20", "label": "CI/CD pipelines maintained for three teams" },
-      "microservices": { "value": "70", "label": "microservices in the full deployment" },
-      "clusters": { "value": "21", "label": "pre-production clusters run" },
+      "pipelines": { "value": "+20", "label": "CI/CD pipelines maintained for three teams" },
+      "microservices": { "value": "+70", "label": "microservices in the full deployment" },
+      "clusters": { "value": "+21", "label": "pre-production clusters run" },
       "deploy": { "value": "6 h → 1 h", "label": "deployment time for the whole set" },
-      "automation": { "value": "30", "label": "operational processes automated with shell" },
-      "reach": { "value": "5,000", "label": "employees covered by a system I delivered" }
+      "automation": { "value": "+30", "label": "operational processes automated with shell" },
+      "reach": { "value": "+5,000", "label": "employees covered by a system I delivered" }
     }
   }
 }

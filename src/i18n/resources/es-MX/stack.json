@@ -17,7 +17,7 @@
     },
     "development": {
       "title": "Desarrollo",
-      "items": ["Java", "Spring Cloud", "JPA", "Node.js", "TypeScript", "React", "React Native", "Expo", "Angular"]
+      "items": ["Java", "Spring Cloud", "JPA", "Node.js", "JavaScript", "TypeScript", "React", "React Native", "Expo", "Angular"]
     },
     "data": {
       "title": "Datos y operación",

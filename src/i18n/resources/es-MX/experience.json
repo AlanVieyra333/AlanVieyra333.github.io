@@ -9,9 +9,9 @@
       "period": "Ago 2024 – Oct 2026",
       "location": "Ciudad de México",
       "highlights": [
-        "Diseñé y mantengo 20 pipelines de CI/CD en Azure DevOps para tres equipos (frontend, backend y QA), reduciendo el despliegue del conjunto de 70 microservicios de 6 horas a 1 hora.",
-        "Administro 21 clústeres de preproducción: 9 en QA sobre Kubernetes, 4 en DEV y 4 en INTGR sobre OpenShift, y 4 en Certificación sobre Kubernetes. Con monitoreo en Elastic Stack, la detección de incidentes en QA bajó de 60 a 30 minutos.",
-        "Aprovisiono infraestructura en AWS y Azure con Terraform, automatizo 10 servidores Linux con Ansible (de 2 horas a 20 minutos) y dejo automatizados 20 procesos de operación con shell scripting.",
+        "Diseñé y mantuve 20 pipelines de CI/CD en Azure DevOps para tres equipos (frontend, backend y QA), y reduje el despliegue del conjunto de 70 microservicios de 6 horas a 1 hora.",
+        "Administré 21 clústeres de preproducción: 9 en QA sobre Kubernetes, 4 en DEV y 4 en INTGR sobre OpenShift, y 4 en Certificación sobre Kubernetes. Con monitoreo en Elastic Stack, la detección de incidentes en QA bajó de 60 a 30 minutos.",
+        "Aprovisioné infraestructura en AWS y Azure con Terraform, automatizé 10 servidores Linux con Ansible (de 2 horas a 20 minutos) y dejé automatizados 20 procesos de operación con shell scripting.",
         "Construí skills propias para Claude Code con las tareas de la organización: 4 skills que detectan la intención en lenguaje natural y ejecutan la tarea con un script determinista de Python. Son 35 scripts, unas 10,800 líneas de código, documentados en unas 3,200 líneas de SKILL.md.",
         "Revisé la arquitectura hexagonal que desacopla cada microservicio de sus dependencias (PostgreSQL, Oracle, RabbitMQ, Kafka, IBM MQ y SQS), produje la imagen Docker de cada combinación tecnológica e implementé y operé controles para la gestión de secretos, el control de acceso en nube y el escaneo de dependencias."
       ]
