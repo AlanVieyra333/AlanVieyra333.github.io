@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
 
 # Una despliegue a la vez: dos despliegues concurrentes al mismo sitio
@@ -22,7 +22,6 @@ jobs:
     timeout-minutes: 10
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -39,32 +38,38 @@ jobs:
       - name: Build
         run: npm run build
 
-      # La publicación va por la API de Pages (`POST /pages/builds`) en vez
-      # de por `actions/deploy-pages`.
+      # La publicación va por la rama `gh-pages`, que es la fuente que
+      # GitHub Pages sirve.
       #
-      # Motivo: `actions/deploy-pages` no intercambia el artefacto con el
-      # runner por el endpoint interno de Actions, sino que pide una URL
-      # firmada a `pipelinesghubeus5.actions.githubusercontent.com`. Ese
-      # endpoint devuelve 404 en esta instancia de GitHub ("Cannot find
-      # any run with github.run_id …"), y la acción falla al publicar
-      # aunque el artefacto se haya subido bien.
+      # Por qué no `actions/deploy-pages`: esa action no toma el artefacto
+      # del runner, pide una URL firmada al servicio interno de Actions
+      # (`pipelinesghubeus5.actions.githubusercontent.com`). En esta
+      # instancia de GitHub ese endpoint devuelve 404 y la action falla
+      # al publicar aunque el artefacto se haya subido bien. Tampoco
+      # sirve `POST /pages/builds`: aquí el endpoint decodifica el
+      # cuerpo como JSON en vez de tratarlo como un tarball.
       #
-      # La API de Pages es la vía soportada para publicar un sitio
-      # estático: recibe un tarball con el contenido del sitio y lo
-      # sirve. Es la misma operación, sin el intercambio de artefactos.
-      - name: Publicar en GitHub Pages
-        id: deploy
-        env:
-          GH_TOKEN: ${{ github.token }}
+      # Publicar la rama directamente no depende de ninguno de los dos
+      # servicios: es el mismo modelo clásico de GitHub Pages.
+      - name: Publicar en la rama gh-pages
         run: |
           set -euo pipefail
-          # El tarball lleva el contenido del sitio en la raíz: `dist/`
-          # con un `index.html` por locale.
-          tar -czf "$RUNNER_TEMP/pages.tar.gz" -C dist .
-          gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds" \
-            --input "$RUNNER_TEMP/pages.tar.gz" \
-            -H "Content-Type: application/gzip" \
-            --jq '.url'
+          SITE="$RUNNER_TEMP/site"
+          rm -rf "$SITE"
+          cp -R dist "$SITE"
+          # `.nojekyll` desactiva el procesamiento de Jekyll que Pages
+          # aplica por defecto: el sitio se sirve tal cual.
+          touch "$SITE/.nojekyll"
+
+          cd "$SITE"
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "build: publish the portfolio site (${GITHUB_SHA})"
+          git push --force \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            gh-pages
 
       - name: Resumen
         run: |
@@ -72,5 +77,6 @@ jobs:
             echo "### Deploy a GitHub Pages"
             echo
             echo "- Commit: \`${GITHUB_SHA}\`"
-            echo "- URL: ${{ steps.deploy.outputs.page_url }}"
+            echo "- Rama: \`gh-pages\`"
+            echo "- URL: https://alanvieyra333.github.io/"
           } >> "$GITHUB_STEP_SUMMARY"
