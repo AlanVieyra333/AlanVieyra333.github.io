@@ -1,10 +1,10 @@
 {
   "eyebrow": "Perfil",
   "title": "Ingeniería de plataforma y automatización",
-  "lede": "Mi trabajo ha estado entre la infraestructura y el producto: los pipelines que desplegué, los clústeres que administré y las herramientas que construí para que el equipo no dependiera de una sola persona.",
+  "lede": "Mi trabajo ha estado entre la infraestructura y el producto. Los pipelines que desplegué, los clústeres que administré y las herramientas que construí para que el equipo no dependiera de una sola persona.",
   "body": [
     "Lo más reciente ha sido DevOps en una plataforma de microservicios Java y Spring Cloud sobre Kubernetes y OpenShift, con Oracle y PostgreSQL como bases de datos y RabbitMQ, Kafka, IBM MQ y SQS como mensajería. Ahí mantuve los pipelines de CI/CD y los clústeres de preproducción, hice el aprovisionamiento en la nube y operé los controles de seguridad.",
-    "Antes de eso construí microservicios y plataformas de integración para banca y telecomunicaciones, y llevé proyectos de cumplimiento laboral como líder técnico. Desde 2023 dirijo la entrega técnica de aplicaciones móviles en React Native, con un método agéntico: contrato de entrega ejecutable, TDD y puertas de release."
+    "Antes de eso construí microservicios y plataformas de integración para banca y telecomunicaciones, y llevé proyectos de cumplimiento laboral como líder técnico. Desde 2023 dirijo la entrega técnica de aplicaciones móviles en React Native, con un método agéntico basado en un contrato de entrega ejecutable, TDD y puertas de release."
   ],
   "metrics": {
     "eyebrow": "En números",

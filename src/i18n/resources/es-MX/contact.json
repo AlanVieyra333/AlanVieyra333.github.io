@@ -1,20 +1,20 @@
 {
   "eyebrow": "Hablemos",
   "title": "Contacto",
-  "lede": "Si tienes un puesto de DevOps, SRE o de plataforma, o un proyecto que necesita esa experiencia, escríbeme. {{responseTimeNote}}",
+  "lede": "Si tienes un puesto de DevOps, SRE o de plataforma, o un proyecto que necesita esa experiencia, escríbeme y lo revisamos.",
   "notConfigured": {
     "title": "Los datos de contacto aún no están configurados.",
     "body": "Edita <code>src/config.ts</code> antes de desplegar."
   },
   "channels": {
     "email": {
-      "title": "Escribir por correo",
-      "detail": "Para una conversación con contexto, archivos adjuntos o una propuesta larga.",
+      "title": "Envíame un correo",
+      "detail": "Cuéntame del puesto o del proyecto y agendamos una reunión.",
       "cta": "Abrir en tu cliente de correo"
     },
     "whatsapp": {
-      "title": "Escribir por WhatsApp",
-      "detail": "Para una primera conversación rápida, sin formularios ni esperas.",
+      "title": "Escríbeme por WhatsApp",
+      "detail": "¿Tienes alguna inquietud? Conversemos y resolvamos cualquier duda.",
       "cta": "Abrir conversación en WhatsApp"
     }
   }

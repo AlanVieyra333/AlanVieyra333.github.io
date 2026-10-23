@@ -1,20 +1,20 @@
 {
   "eyebrow": "Let's talk",
   "title": "Contact",
-  "lede": "If you have a DevOps, SRE or platform role open, or a project that needs that experience, get in touch. {{responseTimeNote}}",
+  "lede": "If you have a DevOps, SRE or platform role open, or a project that needs that experience, write to me and we'll go over it.",
   "notConfigured": {
     "title": "Contact details are not configured yet.",
     "body": "Edit <code>src/config.ts</code> before deploying."
   },
   "channels": {
     "email": {
-      "title": "Send an email",
-      "detail": "For a conversation with context, attachments, or a longer proposal.",
+      "title": "Send me an email",
+      "detail": "Tell me about the role or the project and let's set up a meeting.",
       "cta": "Open in your mail client"
     },
     "whatsapp": {
-      "title": "Message on WhatsApp",
-      "detail": "For a quick first conversation, no forms and no waiting.",
+      "title": "Message me on WhatsApp",
+      "detail": "Any questions or concerns? Let's talk and clear up any doubts.",
       "cta": "Open the WhatsApp conversation"
     }
   }

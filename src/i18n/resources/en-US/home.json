@@ -1,8 +1,8 @@
 {
   "hero": {
     "eyebrow": "DevOps · SRE · Full Stack · Applied AI",
-    "title": "I build the infrastructure and the automation that get software into production.",
-    "lede": "I'm {{ownerName}}, a software engineer in Mexico City. I've been in software since 2017, with more than 5 years of experience both as a fullstack developer and as a DevOps/SRE engineer. In recent years I've focused on automating deployments and building the tooling that lets a team ship faster.",
+    "title": "I configure the infrastructure and the automation that get software into production",
+    "lede": "I'm {{ownerName}}, a software engineer in Mexico City. I've been in software since 2017, with more than 5 years of experience both as a fullstack developer and as a DevOps engineer. In recent years I've focused on automating deployments and building the tooling the development team needs to ship faster.",
     "primaryCta": "View the CV",
     "secondaryCta": "See the projects"
   }

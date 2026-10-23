@@ -89,7 +89,7 @@ const LOCALE_CASES = [
   {
     locale: 'es-MX',
     path: '/es-MX/',
-    hero: /Construyo la infraestructura/,
+    hero: /Configuro la infraestructura/,
     sectionTitles: [
       'Ingeniería de plataforma y automatización',
       'Dónde he trabajado y qué construí',
@@ -101,7 +101,7 @@ const LOCALE_CASES = [
   {
     locale: 'en-US',
     path: '/en-US/',
-    hero: /I build the infrastructure/,
+    hero: /I configure the infrastructure/,
     sectionTitles: [
       'Platform and automation engineering',
       'Where I worked and what I built',

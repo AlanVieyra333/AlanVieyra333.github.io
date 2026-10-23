@@ -136,7 +136,7 @@ público sí lleva el nombre, por decisión editorial explícita.
 ### Confidencialidad del cliente freelance
 
 El puesto freelance de cumplimiento se describe **sin nombrar al
-cliente** —"Consultoría freelance de cumplimiento", en lugar del nombre
+cliente** —"Sistema de gestión a la medida para cliente", en lugar del nombre
 de la empresa—. Es una convención, no un guard automático: el nombre no
 aparece en ningún archivo de este repositorio, ni siquiera en los
 patrones de un script, precisamente para que el repositorio público no

@@ -1,7 +1,7 @@
 import { Trans, useTranslation } from 'react-i18next';
 import FadeIn from './FadeIn';
 import { IS_CONTACT_CONFIGURED } from '@/config';
-import { CONTACT, CONTACT_CHANNELS } from '@/contactChannels';
+import { CONTACT_CHANNELS } from '@/contactChannels';
 
 /**
  * Sección de contacto.
@@ -24,7 +24,7 @@ export default function Contact() {
             {t('title')}
           </h2>
           <p className="mt-5 max-w-2xl text-pretty text-lede text-ink-600">
-            {t('lede', { responseTimeNote: CONTACT.responseTimeNote })}
+            {t('lede')}
           </p>
         </FadeIn>
 

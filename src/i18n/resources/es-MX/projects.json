@@ -1,11 +1,11 @@
 {
   "eyebrow": "Proyectos abiertos",
   "title": "Lo que está en GitHub",
-  "lede": "Repositorios públicos con el código, la documentación y las decisiones de diseño a la vista.",
+  "lede": "Tres repositorios públicos con el código, la documentación y las decisiones de diseño a la vista. Échales un vistazo antes de platicar conmigo.",
   "items": {
     "resume": {
       "title": "Currículum profesional en LaTeX",
-      "summary": "Genera un currículum en cuatro perfiles, dos idiomas y dos variantes de diseño: 16 PDFs en total, todos generados desde una fuente única de verdad, con invariantes verificados en CI y releases publicados por etiqueta.",
+      "summary": "Genera un currículum en cuatro perfiles, dos idiomas y dos variantes de diseño. Son 16 PDFs en total, todos generados desde una fuente única de verdad, con invariantes verificados en CI y releases publicados por etiqueta.",
       "tags": ["LaTeX", "Make", "GitHub Actions", "MIT"],
       "linkLabel": "Ver el repositorio",
       "href": "https://github.com/AlanVieyra333/resume"

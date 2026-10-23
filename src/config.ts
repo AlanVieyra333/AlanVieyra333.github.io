@@ -50,8 +50,6 @@ export const CONTACT = {
   whatsappMessage:
     'Hola, vi tu portafolio y me gustaría platicar sobre una oportunidad o un proyecto.',
   emailSubject: 'Contacto desde el portafolio',
-  /** Expectativa de respuesta honesta, no una promesa comercial. */
-  responseTimeNote: 'Respondo normalmente en menos de 24 horas hábiles.',
 } as const;
 
 export const CONTACT_LINKS = {

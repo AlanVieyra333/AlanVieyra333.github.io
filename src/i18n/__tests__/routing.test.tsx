@@ -85,7 +85,7 @@ describe('LocaleApp — locale-prefixed routing', () => {
     );
     // Espera al menos un h1 con texto en español.
     const heading = await screen.findByRole('heading', { level: 1 });
-    expect(heading.textContent).toMatch(/Construyo la infraestructura/);
+    expect(heading.textContent).toMatch(/Configuro la infraestructura/);
   });
 
   it('renderiza Home en inglés para /en-US/', async () => {
@@ -101,7 +101,7 @@ describe('LocaleApp — locale-prefixed routing', () => {
       </TestApp>,
     );
     const heading = await screen.findByRole('heading', { level: 1 });
-    expect(heading.textContent).toMatch(/I build the infrastructure/i);
+    expect(heading.textContent).toMatch(/I configure the infrastructure/i);
   });
 
   it('renderiza NotFound para un locale inválido y redirige al default', async () => {
@@ -122,7 +122,7 @@ describe('LocaleApp — locale-prefixed routing', () => {
     // Al entrar a `/fr-FR/` la app navega al default `/es-MX/`.
     // MemoryRouter en la versión 7 sigue la redirección interna.
     const heading = await screen.findByRole('heading', { level: 1 });
-    expect(heading.textContent).toMatch(/Construyo la infraestructura/);
+    expect(heading.textContent).toMatch(/Configuro la infraestructura/);
   });
 });
 
@@ -150,14 +150,14 @@ describe('RootRedirect', () => {
     // El <Navigate> reemplaza la URL, y MemoryRouter renderiza el destino.
     // Buscamos un heading en inglés.
     return screen.findByRole('heading', { level: 1 }).then((h) => {
-      expect(h.textContent).toMatch(/I build the infrastructure/i);
+      expect(h.textContent).toMatch(/I configure the infrastructure/i);
     });
   });
 
   it('hace fallback al default si navegador no tiene idioma soportado', () => {
     setupRoot(['fr-FR']);
     return screen.findByRole('heading', { level: 1 }).then((h) => {
-      expect(h.textContent).toMatch(/Construyo la infraestructura/);
+      expect(h.textContent).toMatch(/Configuro la infraestructura/);
     });
   });
 });

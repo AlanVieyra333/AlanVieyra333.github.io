@@ -16,8 +16,8 @@ export interface ContactChannel {
 export const CONTACT_CHANNELS: readonly ContactChannel[] = [
   {
     id: 'email',
-    title: 'Escribir por correo',
-    detail: 'Para platicar con contexto, archivos adjuntos o propuestas largas.',
+    title: 'Envíame un correo',
+    detail: 'Cuéntame del puesto o del proyecto y agendamos una reunión.',
     cta: 'Abrir en tu cliente de correo',
     href: CONTACT_LINKS.email,
     Icon: MdEmail as IconType,
@@ -25,8 +25,8 @@ export const CONTACT_CHANNELS: readonly ContactChannel[] = [
   },
   {
     id: 'whatsapp',
-    title: 'Escribir por WhatsApp',
-    detail: 'Para una primera conversación rápida, sin formularios ni esperas.',
+    title: 'Escríbeme por WhatsApp',
+    detail: '¿Tienes alguna inquietud? Conversemos y resolvamos cualquier duda.',
     cta: 'Abrir conversación en WhatsApp',
     href: CONTACT_LINKS.whatsapp,
     Icon: FaWhatsapp as IconType,

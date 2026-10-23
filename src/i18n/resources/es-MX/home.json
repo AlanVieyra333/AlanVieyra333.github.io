@@ -1,8 +1,8 @@
 {
   "hero": {
     "eyebrow": "DevOps · SRE · Full Stack · IA aplicada",
-    "title": "Construyo la infraestructura y la automatización para llevar el software a producción.",
-    "lede": "Soy {{ownerName}}, ingeniero de software en Ciudad de México. Llevo en el software desde 2017, con más de 5 años de experiencia tanto como desarrollador fullstack como ingeniero DevOps/SRE. En los últimos años me he dedicado a automatizar despliegues y a construir las herramientas para que un equipo entregue más rápido.",
+    "title": "Configuro la infraestructura y la automatización para llevar el software a producción",
+    "lede": "Soy {{ownerName}}, ingeniero de software en Ciudad de México. Llevo en el software desde 2017, con más de 5 años de experiencia tanto como desarrollador fullstack como ingeniero DevOps. En los últimos años me he dedicado a automatizar despliegues y a construir las herramientas necesarias para que el equipo de desarrollo realice despliegues más rápidos.",
     "primaryCta": "Ver el CV",
     "secondaryCta": "Ver los proyectos"
   }

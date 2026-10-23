@@ -1,10 +1,10 @@
 {
   "eyebrow": "Profile",
   "title": "Platform and automation engineering",
-  "lede": "My work has been between infrastructure and product: the pipelines I deployed, the clusters I ran and the tooling I built so the team didn't depend on a single person.",
+  "lede": "My work has been between infrastructure and product. I deployed the pipelines, ran the clusters and built the tooling so the team didn't depend on a single person.",
   "body": [
     "The last few years I spent on DevOps for a platform of Java and Spring Cloud microservices running on Kubernetes and OpenShift, with Oracle and PostgreSQL as databases and RabbitMQ, Kafka, IBM MQ and SQS as messaging. There I owned the CI/CD pipelines and the pre-production clusters, I handled cloud provisioning and I operated the security controls.",
-    "Before that I built microservices and integration platforms for banking and telecoms, and led compliance projects as a technical lead. Since 2023 I have been setting the technical direction for mobile delivery in React Native, using an agentic method: an executable delivery contract, TDD and release gates."
+    "Before that I built microservices and integration platforms for banking and telecoms, and led compliance projects as a technical lead. Since 2023 I have been setting the technical direction for mobile delivery in React Native, using an agentic method built on an executable delivery contract, TDD and release gates."
   ],
   "metrics": {
     "eyebrow": "In numbers",

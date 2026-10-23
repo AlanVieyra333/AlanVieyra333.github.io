@@ -66,23 +66,23 @@ async function renderAt(path: string, locale: Locale): Promise<string> {
 describe('arranque en frío: el idioma lo manda la URL', () => {
   it('en /en-US el primer render ya sale en inglés', async () => {
     const h1 = await renderAt('/en-US', 'en-US');
-    expect(h1).toMatch(/I build the infrastructure/i);
+    expect(h1).toMatch(/I configure the infrastructure/i);
   });
 
   it('en /es-MX el primer render sale en español', async () => {
     const h1 = await renderAt('/es-MX', 'es-MX');
-    expect(h1).toMatch(/Construyo la infraestructura/);
+    expect(h1).toMatch(/Configuro la infraestructura/);
   });
 
   it('la URL manda sobre la preferencia guardada en localStorage', async () => {
     window.localStorage.setItem('vieyra-labs.locale.v1', 'es-MX');
     const h1 = await renderAt('/en-US', 'en-US');
-    expect(h1).toMatch(/I build the infrastructure/i);
+    expect(h1).toMatch(/I configure the infrastructure/i);
   });
 
   it('el bundle de recursos del locale activo está cargado', async () => {
     await primeLocale('en-US');
     expect(i18n.hasResourceBundle('en-US', 'home')).toBe(true);
-    expect(i18n.t('home:hero.title')).toMatch(/I build the infrastructure/i);
+    expect(i18n.t('home:hero.title')).toMatch(/I configure the infrastructure/i);
   });
 });
