@@ -8,19 +8,21 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write
 
 # Una despliegue a la vez: dos despliegues concurrentes al mismo sitio
-# pueden dejarPublished una versión anterior por encima de la nueva.
+# pueden dejar publicada una versión anterior por encima de la nueva.
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  build:
-    name: Build
+  deploy:
+    name: Build y publicación
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -37,23 +39,38 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Configure Pages
-        uses: actions/configure-pages@b8130d9ab958b325bbde9786d62f2c97a9885a0e # v3.0.7
+      # La publicación va por la API de Pages (`POST /pages/builds`) en vez
+      # de por `actions/deploy-pages`.
+      #
+      # Motivo: `actions/deploy-pages` no intercambia el artefacto con el
+      # runner por el endpoint interno de Actions, sino que pide una URL
+      # firmada a `pipelinesghubeus5.actions.githubusercontent.com`. Ese
+      # endpoint devuelve 404 en esta instancia de GitHub ("Cannot find
+      # any run with github.run_id …"), y la acción falla al publicar
+      # aunque el artefacto se haya subido bien.
+      #
+      # La API de Pages es la vía soportada para publicar un sitio
+      # estático: recibe un tarball con el contenido del sitio y lo
+      # sirve. Es la misma operación, sin el intercambio de artefactos.
+      - name: Publicar en GitHub Pages
+        id: deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # El tarball lleva el contenido del sitio en la raíz: `dist/`
+          # con un `index.html` por locale.
+          tar -czf "$RUNNER_TEMP/pages.tar.gz" -C dist .
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds" \
+            --input "$RUNNER_TEMP/pages.tar.gz" \
+            -H "Content-Type: application/gzip" \
+            --jq '.url'
 
-      - name: Upload the artifact
-        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
-        with:
-          path: dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@13b55b33dd8996121833dbc1db458c793a334630 # v3.0.1
+      - name: Resumen
+        run: |
+          {
+            echo "### Deploy a GitHub Pages"
+            echo
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- URL: ${{ steps.deploy.outputs.page_url }}"
+          } >> "$GITHUB_STEP_SUMMARY"
