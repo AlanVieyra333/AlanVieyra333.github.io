@@ -16,9 +16,13 @@ export default function Stack() {
     <section id="stack" className="bg-white py-section">
       <div className="mx-auto max-w-content px-gutter">
         <FadeIn>
-          <p className="text-eyebrow uppercase text-brand-700">{t('eyebrow')}</p>
-          <h2 className="mt-3 max-w-3xl text-title text-ink-900">{t('title')}</h2>
-          <p className="mt-4 max-w-2xl text-lede text-ink-600">{t('lede')}</p>
+          <p className="section-eyebrow text-eyebrow uppercase text-brand-700">
+            {t('eyebrow')}
+          </p>
+          <h2 className="mt-4 max-w-3xl text-balance text-title text-ink-900">
+            {t('title')}
+          </h2>
+          <p className="mt-5 max-w-2xl text-pretty text-lede text-ink-600">{t('lede')}</p>
         </FadeIn>
 
         <ul className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -30,7 +34,10 @@ export default function Stack() {
             return (
               <FadeIn key={groupId} delay={index * 80}>
                 <li className="flex h-full flex-col rounded-card border border-ink-100 bg-ink-50 p-6">
-                  <h3 className="text-subtitle text-ink-900">
+                  {/* `min-h-[2lh]` reserva dos líneas en todos los
+                      títulos, para que las etiquetas de cada tarjeta
+                      arranquen a la misma altura dentro de la fila. */}
+                  <h3 className="min-h-[2lh] text-balance text-subtitle text-ink-900">
                     {t(`groups.${groupId}.title`)}
                   </h3>
                   <ul className="mt-4 flex flex-wrap gap-2">

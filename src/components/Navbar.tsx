@@ -51,27 +51,20 @@ export default function Navbar() {
     toggleRef.current?.focus();
   }
 
+  // Una entrada por sección del cuerpo. Antes el menú listaba cuatro
+  // de las siete secciones: "Stack" y "Credenciales" quedaban sin
+  // acceso directo desde la navegación.
   const navItems = [
+    { key: 'home', label: t('navbar.home.label'), hash: t('navbar.home.href') },
+    { key: 'process', label: t('navbar.process.label'), hash: t('navbar.process.href') },
+    { key: 'stack', label: t('navbar.stack.label'), hash: t('navbar.stack.href') },
+    { key: 'work', label: t('navbar.work.label'), hash: t('navbar.work.href') },
     {
-      id: t('navbar.home.id'),
-      label: t('navbar.home.label'),
-      hash: t('navbar.home.href'),
+      key: 'credentials',
+      label: t('navbar.credentials.label'),
+      hash: t('navbar.credentials.href'),
     },
-    {
-      id: t('navbar.process.id'),
-      label: t('navbar.process.label'),
-      hash: t('navbar.process.href'),
-    },
-    {
-      id: t('navbar.work.id'),
-      label: t('navbar.work.label'),
-      hash: t('navbar.work.href'),
-    },
-    {
-      id: t('navbar.contact.id'),
-      label: t('navbar.contact.label'),
-      hash: t('navbar.contact.href'),
-    },
+    { key: 'contact', label: t('navbar.contact.label'), hash: t('navbar.contact.href') },
   ];
 
   return (
@@ -85,14 +78,14 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
           aria-label={t('navbar.ariaHome')}
           lang={locale}
-          className="text-title font-bold tracking-tight"
+          className="text-xl font-bold tracking-tight"
         >
           <Wordmark />
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-7 lg:flex">
           {navItems.map((item) => (
-            <li key={item.id}>
+            <li key={item.key}>
               <Link
                 to={`${localizedPath('/')}${item.hash}`}
                 onClick={() => setOpen(false)}
@@ -107,7 +100,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <LanguageSelector variant="compact" asList={false} />
           <button
             ref={toggleRef}
@@ -127,11 +120,11 @@ export default function Navbar() {
       <div
         id="menu-principal"
         hidden={!open}
-        className="border-t border-ink-100 bg-white md:hidden"
+        className="border-t border-ink-100 bg-white lg:hidden"
       >
         <ul className="mx-auto flex max-w-content flex-col gap-1 px-gutter py-4">
           {navItems.map((item) => (
-            <li key={item.id}>
+            <li key={item.key}>
               <Link
                 to={`${localizedPath('/')}${item.hash}`}
                 onClick={closeAndReturnFocus}

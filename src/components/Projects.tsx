@@ -17,9 +17,13 @@ export default function Projects() {
     <section id="proyectos" className="bg-ink-50 py-section">
       <div className="mx-auto max-w-content px-gutter">
         <FadeIn>
-          <p className="text-eyebrow uppercase text-brand-700">{t('eyebrow')}</p>
-          <h2 className="mt-3 max-w-3xl text-title text-ink-900">{t('title')}</h2>
-          <p className="mt-4 max-w-2xl text-lede text-ink-600">{t('lede')}</p>
+          <p className="section-eyebrow text-eyebrow uppercase text-brand-700">
+            {t('eyebrow')}
+          </p>
+          <h2 className="mt-4 max-w-3xl text-balance text-title text-ink-900">
+            {t('title')}
+          </h2>
+          <p className="mt-5 max-w-2xl text-pretty text-lede text-ink-600">{t('lede')}</p>
         </FadeIn>
 
         <ul className="mt-14 grid gap-6 lg:grid-cols-3">
@@ -32,10 +36,10 @@ export default function Projects() {
             return (
               <FadeIn key={projectId} delay={index * 100}>
                 <li className="flex h-full flex-col rounded-card border border-ink-100 bg-white p-6 shadow-card">
-                  <h3 className="text-subtitle text-ink-900">
+                  <h3 className="min-h-[2lh] text-balance text-subtitle text-ink-900">
                     {t(`items.${projectId}.title`)}
                   </h3>
-                  <p className="mt-3 flex-1 text-body text-ink-700">
+                  <p className="mt-3 flex-1 text-pretty text-body text-ink-700">
                     {t(`items.${projectId}.summary`)}
                   </p>
 

@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="border-t border-ink-100 bg-white">
       <div className="mx-auto flex max-w-content flex-col gap-8 px-gutter py-12 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-subtitle font-bold tracking-tight">
+          <p className="text-xl font-bold tracking-tight">
             <Wordmark />
           </p>
           <p className="mt-2 text-small text-ink-600">

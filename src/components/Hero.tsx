@@ -18,8 +18,10 @@ export default function Hero() {
 
       <div className="mx-auto flex min-h-[78svh] max-w-content flex-col justify-center px-gutter py-section">
         <p className="text-eyebrow uppercase text-accent-300">{t('hero.eyebrow')}</p>
-        <h1 className="mt-5 max-w-3xl text-display text-white">{t('hero.title')}</h1>
-        <p className="mt-6 max-w-2xl text-lede text-brand-100">
+        <h1 className="mt-5 max-w-4xl text-balance text-display text-white">
+          {t('hero.title')}
+        </h1>
+        <p className="mt-6 max-w-2xl text-pretty text-lede text-brand-100">
           {t('hero.lede', { ownerName: OWNER_NAME })}
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
