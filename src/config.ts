@@ -44,7 +44,7 @@ export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
 export const CONTACT = {
-  email: 'info@vieyralabs.com',
+  email: 'alan.vieyra376@gmail.com',
   /** E.164 sin `+`. Se usa con `wa.me/${numero}`. */
   whatsappNumber: '525591250145',
   whatsappMessage:
