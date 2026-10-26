@@ -70,8 +70,8 @@ La raíz `/` redirige client-side al locale detectado según esta
 prioridad:
 
 1. **Prefijo de URL** (si está presente y soportado).
-2. **`localStorage`** (`vieyra-labs.locale`, persistido al cambiar
-   idioma).
+2. **`localStorage`** (`alanvieyra333-portfolio.locale.v1`, persistido
+   al cambiar idioma).
 3. **`navigator.languages`** (con fallback regional `es-ES → es-MX`,
    `en-GB → en-US`).
 4. **Default** (`es-MX`).

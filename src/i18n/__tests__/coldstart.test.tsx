@@ -29,6 +29,7 @@ import { MemoryRouter } from 'react-router-dom';
 import App from '../../App';
 import { i18n, initI18n } from '@/i18n';
 import type { Locale } from '@/i18n';
+import { LOCALE_STORAGE_KEY } from '@/i18n/locales';
 
 beforeAll(() => {
   initI18n();
@@ -75,7 +76,7 @@ describe('arranque en frío: el idioma lo manda la URL', () => {
   });
 
   it('la URL manda sobre la preferencia guardada en localStorage', async () => {
-    window.localStorage.setItem('vieyra-labs.locale.v1', 'es-MX');
+    window.localStorage.setItem(LOCALE_STORAGE_KEY, 'es-MX');
     const h1 = await renderAt('/en-US', 'en-US');
     expect(h1).toMatch(/I configure the infrastructure/i);
   });

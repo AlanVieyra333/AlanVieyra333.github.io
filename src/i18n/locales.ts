@@ -24,10 +24,12 @@ export const DEFAULT_LOCALE: Locale = 'es-MX';
 
 /**
  * Locale storage key — versionado por si cambia el formato en el
- * futuro. El prefijo es el del sitio, para que un visitante que ya
- * guardó la preferencia en vieyralabs.com no la pierda.
+ * futuro. El prefijo identifica la app (nombre del repo), porque todo
+ * lo publicado bajo alanvieyra333.github.io comparte un solo origen y
+ * un solo localStorage: sin namespace propio, otro proyecto del mismo
+ * usuario podría colisionar con esta clave.
  */
-export const LOCALE_STORAGE_KEY = 'vieyra-labs.locale.v1';
+export const LOCALE_STORAGE_KEY = 'alanvieyra333-portfolio.locale.v1';
 
 /**
  * Convierte un locale URL a su forma Open Graph (Open Graph usa
